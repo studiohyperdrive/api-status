@@ -1,3 +1,3 @@
-'use strict';
+"use strict";
 
-module.exports = require('./lib/status');
+module.exports = require("./lib/status");

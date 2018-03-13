@@ -6,10 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npm run lint:eslint",
-    "lint:eslint": "./node_modules/.bin/eslint config/** server/** test/**"
+    "lint:eslint": "./node_modules/.bin/eslint lib/** index.js test/**"
   },
   "devDependencies": {
-    "eslint": "3.19.0"
+    "@district01/eslint-config": "1.0.0",
+    "chai": "4.0.2",
+    "eslint": "3.19.0",
+    "eslint-plugin-chai-friendly": "0.3.6",
+    "istanbul": "0.4.5",
+    "mocha": "4.0.1"
   },
   "author": "",
   "license": "ISC"
