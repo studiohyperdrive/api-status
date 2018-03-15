@@ -230,8 +230,8 @@ jspm_packages
 .yarn-integrity
 
 # Coverage directory used by tools like istanbul
-*/docs/*.*
-!*/docs/*.gitkeep
+/docs/*.*
+!/docs/*.gitkeep
 
 
 
