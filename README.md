@@ -4,42 +4,22 @@ This middleware exposes a status-endpoint to check the status. This returns the 
 
 # Table of contents #
 
-* [Setup](#setup)
+* [Setup](#setup) 
   * [System Dependencies](#system-dependencies)
-  * [Output](#output)
   * [Usage](#usage)
-* [Codebase](#codebase)
-  * [Structure](#structure)
-  * [NPM Scripts](#npm-scripts)
+* [Result](#result)
 * [Code Contribution](#code-contribution)
   * [Guidelines](#guidelines)
   * [Branches](#branches)
-* [Project Context](#project-context)
-  * [Details](#details)
-  * [Team](#team)
+  * [Codebase](#codebase)
+    * [Structure](#structure)
+    * [NPM Scripts](#npm-scripts)
 
 ## Setup ##
 
 ### System Dependencies ###
 
-* E.g. [Node 6.10.2](https://nodejs.org/en/)
-
-### Output ###
-
-```json
-{
-  "name": "myApplication",
-  "version":"v1.5.2",
-  "success":true,
-  "services":[{
-    "name":"MongoDB",
-    "online":true
-  },{
-    "name":"Redis",
-    "online":true
-  }]
-}
-```
+this package works from NodeJS 4 and up.
 
 ### Usage ###
 
@@ -132,27 +112,24 @@ require('@studiohyperdrive/status')(app, {
 
 ```
 
-## Codebase ##
+## Result ##
 
-### Structure ###
+This package exposes a status route in your API. if you navigate towards https://myproject.com/status (while replacing the domain with your own url) you will see a similar json output like the one below:
 
-* **lib/**: Contains the NodeJS module business logic.
-
-### External Services ###
-
-This project does not implement any external services
-
-### NPM Scripts ###
-
-| Command       | Description                                 |
-| ------------- | ------------------------------------------- |
-| start         | Install dependencies.                       |
-| clean         | Remove the coverage folder.                 |
-| lint          | Run all the lint tasks                      |
-| lint:eslint   | Run eslint                                  |
-| test          | Run tests                                   |
-
-All commands are executable by running `npm run [COMMAND-NAME]`.
+```json
+{
+  "name": "myApplication",
+  "version":"v1.5.2",
+  "success":true,
+  "services":[{
+    "name":"MongoDB",
+    "online":true
+  },{
+    "name":"Redis",
+    "online":true
+  }]
+}
+```
 
 ## Code Contribution ##
 
@@ -165,15 +142,24 @@ yoloswag? whatever?
 We follow these naming conventions:
 
 * **master**: Production-ready code.
-* **release/***: Snapshot of a release.
-* **feature/***: For developing new features, to be PRed to a release branch.
+* **release/***: Snapshot of a release. To be started from te master branch and merged back into the master branch via a Pull Request.
+* **feature/***: For developing new features, to be started from master branch and merged via PR into a release branch.
 * **bugfix/***: For bugs that are logged during testing, to be PRed to a release branch.
 
-## Project Context ##
+### Codebase ###
 
-This project is a Studio Hyperdrive team effort.
+#### Structure ####
 
-### Details ###
+* **lib/**: Contains the NodeJS module business logic.
 
-* **Client**: Studio Hyperdrive
-* **Start**: 12/03/2018
+#### NPM Scripts ####
+
+| Command       | Description                                 |
+| ------------- | ------------------------------------------- |
+| start         | Install dependencies.                       |
+| clean         | Remove the coverage folder.                 |
+| lint          | Run all the lint tasks                      |
+| lint:eslint   | Run eslint                                  |
+| test          | Run tests                                   |
+
+All commands are executable by running `npm run [COMMAND-NAME]`.
